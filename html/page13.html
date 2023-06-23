@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/page6.css">
+
+<body>
+	<main>
+		<h2>个人感受</h2>
+		<h3 align="right"><a href="#" onclick="setCurrentPlayTime(); window.location.href='page9.html';">返回</a></h3>
+		<p class="p1"><span>思想感悟</span><br>
+			《大鱼海棠》本是樁花湫月，奈何北冥有鱼你是否已化作春雨，穿越时来到这里，樁去湫来，海栄花开，你在梦里，我不愿醒来。--
+			《在这个世界相遇》<br>
+			人的生命来源于大海“所有活着的人类，都是海里一条巨大的鱼。我们的生命就像横越大海，没有人相信我，都说我老糊涂了，可是每一次在梦里，我都清楚地看到一群大鱼从天而降，听到他们呼唤的声音。那些美好的声音唤醒了我的回忆。”<br>
+			愿世间所有心有羁绊的人，最后都能拨开纷扰，又一次重逢。<br>
+			May al the people in the world with fetters in
+			their hearts finally be able to get rid of their troubles and meet again .<br>
+			山前既相见，山后再重逢。<br>
+			They wil meet at the front of the mountain and meet again at the back of the mountain .<br>
+			人生，总会有不期而遇的温暖和生生不息的希望。愿，你我安好<br></p>
+
+		<p align="center"><img src="../images/9.jpg" width="200" height="360">
+			<img src="../images/6.jpg" width="200" height="360">
+			<img src="../images/7.jpg" width="200" height="360">
+			<img src="../images/8.jpg" width="200" height="360">
+		</p>
+	</main>
+	<audio id="audioElementId" src="../video/dayv.ogg" autoplay="autoplay" loop="loop" hidden="true"
+		style="display: none;">
+		你的浏览器版本太低
+	</audio>
+
+	<script>
+		function saveCurrentPlayTime() {
+			var audioElement = document.getElementById("audioElementId");
+			audioElement.currentTime = localStorage.getItem("bgMusicCurrentTime");
+			audioElement.play();
+			localStorage.setItem("bgMusicCurrentTime", audioElement.currentTime);
+		}
+		function setCurrentPlayTime() {
+			var audioElement = document.getElementById("audioElementId");
+			localStorage.setItem("bgMusicCurrentTime", audioElement.currentTime);
+		}
+
+		window.onload = saveCurrentPlayTime;
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/page6.css">
+</head>
+
+<body>
+	<main>
+		<h2>歌词欣赏</h2>
+		<h3 align="right"><a href="#" onclick="setCurrentPlayTime(); window.location.href='page5.html';">返回</a></h3>
+		<pre align="center" class="p1">
+大鱼 (Live) - 周深/郭沁
+
+词：尹约
+
+曲：钱雷
+
+原唱：周深
+周：
+
+海浪无声将夜幕深深淹没
+
+漫过天空尽头的角落
+
+大鱼在梦境的缝隙里游过
+
+凝望你沉睡的轮廓
+
+郭：
+
+看海天一色 听风起雨落
+
+执子手吹散苍茫茫烟波
+
+大鱼的翅膀 已经太辽阔
+
+我松开时间的绳索
+
+周：
+
+怕你飞远去
+
+怕你离我而去
+
+更怕你永远停留在这里
+
+每一滴泪水 都向你流淌去
+
+倒流进天空的海底
+
+郭：
+
+海浪无声将夜幕深深淹没
+
+漫过天空尽头的角落
+
+周：
+
+大鱼在梦境的缝隙里游过
+
+凝望你沉睡的轮廓
+
+合：
+
+看海天一色 听风起雨落
+
+执子手吹散苍茫茫烟波
+
+大鱼的翅膀 已经太辽阔
+
+我松开时间的绳索
+
+合：
+
+看你飞远去
+
+看你离我而去
+
+原来你生来就属于天际
+
+每一滴泪水 都向你流淌去
+
+倒流回最初的相遇
+
+郭：
+
+倒流回最初的相遇
+
+倒流回最初的相遇
+</pre>
+
+	</main>
+	<audio id="audioElementId" src="../video/dayv.ogg" autoplay="autoplay" loop="loop" hidden="true"
+		style="display: none;">
+		你的浏览器版本太低
+	</audio>
+
+	<script>
+		function saveCurrentPlayTime() {
+			var audioElement = document.getElementById("audioElementId");
+			audioElement.currentTime = localStorage.getItem("bgMusicCurrentTime");
+			audioElement.play();
+			localStorage.setItem("bgMusicCurrentTime", audioElement.currentTime);
+		}
+		function setCurrentPlayTime() {
+			var audioElement = document.getElementById("audioElementId");
+			localStorage.setItem("bgMusicCurrentTime", audioElement.currentTime);
+		}
+
+		window.onload = saveCurrentPlayTime;
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/page6.css">
+</head>
+
+<body>
+	<main>
+		<h2>歌词欣赏</h2>
+		<h3 align="right"><a href="#" onclick="setCurrentPlayTime(); window.location.href='page5.html';">返回</a></h3>
+		<pre align="center" class="p1">
+湫兮如风 - 徐佳莹 (LALA Xu)
+
+词：梁旋
+
+曲：吉田潔
+
+日月星辰悄悄
+
+升了又落
+
+我却不知白天黑夜的存在
+
+世界消失
+
+有你在我心里真美好
+
+有一天想成为你骄傲
+
+日月星辰悄悄
+
+升了又落
+
+我却不知白天黑夜的存在
+
+世界消失
+
+有你在我心里真美好
+
+有一天想成为你的骄傲
+
+今夕何夕 见此良人 如月之恒
+
+为你守望 每次日落日升
+
+我一生都在
+
+用歌声寻觅你
+
+为你享受着
+
+生命的悲喜
+
+请跟我乘风而去
+
+我一生都在
+
+用歌声寻觅你
+
+为你享受着
+
+生命的悲喜
+
+请跟我乘风而去
+</pre>
+
+	</main>
+	<audio id="audioElementId" src="../video/dayv.ogg" autoplay="autoplay" loop="loop" hidden="true"
+		style="display: none;">
+		你的浏览器版本太低
+	</audio>
+
+	<script>
+		function saveCurrentPlayTime() {
+			var audioElement = document.getElementById("audioElementId");
+			audioElement.currentTime = localStorage.getItem("bgMusicCurrentTime");
+			audioElement.play();
+			localStorage.setItem("bgMusicCurrentTime", audioElement.currentTime);
+		}
+		function setCurrentPlayTime() {
+			var audioElement = document.getElementById("audioElementId");
+			localStorage.setItem("bgMusicCurrentTime", audioElement.currentTime);
+		}
+
+		window.onload = saveCurrentPlayTime;
+	</script>
+</body>
+
+</html>

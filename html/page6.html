@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/page6.css">
+</head>
+
+<body>
+	<header>
+		<ul>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='../点这里打开网页.html';">
+					剧情简介
+				</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page2.html';">
+					角色介绍</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page3.html';">
+					动画制作</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page4.html';">
+					制作相关</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page5.html';">
+					动画音乐</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page6.html';">
+					经典语句</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page7.html';">
+					放映信息</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page8.html';">
+					获奖记录</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page9.html';">
+					作品评价</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page10.html';">
+					观影感触</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page11.html';">
+					手机壁纸</a>
+			</li>
+		</ul>
+	</header>
+	<main>
+		<h2>经典语句</h2>
+		<p class="p1"><span>梦想</span><br>
+			这短短的一生，我们最终都会失去，<br>你不妨大胆一点，爱一个人，攀一座山，追一个梦<br></p>
+		<p class="p1"><span>奇迹</span><br>
+			很多问题没有答案，但我相信，上天给我们生命，一定为了我们创造奇迹<br></p>
+		<p class="p1"><span>相遇</span><br>
+			人生最美好的际遇，是在对的时间遇见对的人<br></p>
+		<p class="p1"><span>人生</span><br>
+			世界上每一个活着的人<br>
+			都是海里活着的一条大鱼<br> </p>
+		<p class="p1"><span>陪伴</span><br>
+			从此便不在爱这清空明月<br>
+			我会化作这人间的风和雨陪在你左右<br></p>
+		<p class="p1"><span>善良</span><br>
+			只要你心地是善良的，对错都是别人的事<br></p>
+		<p class="p1"><span>生命</span><br>
+			世界上唯有东西，你都可以评价<br>
+			唯生命，生命无价，你不要奢望来生<br></p>
+	</main>
+	<audio id="audioElementId" src="../video/dayv.ogg" autoplay="autoplay" loop="loop" hidden="true"
+		style="display: none;">
+		你的浏览器版本太低
+	</audio>
+
+	<script>
+		function saveCurrentPlayTime() {
+			var audioElement = document.getElementById("audioElementId");
+			audioElement.currentTime = localStorage.getItem("bgMusicCurrentTime");
+			audioElement.play();
+			localStorage.setItem("bgMusicCurrentTime", audioElement.currentTime);
+		}
+		function setCurrentPlayTime() {
+			var audioElement = document.getElementById("audioElementId");
+			localStorage.setItem("bgMusicCurrentTime", audioElement.currentTime);
+		}
+
+		window.onload = saveCurrentPlayTime;
+	</script>
+</body>
+
+</html>

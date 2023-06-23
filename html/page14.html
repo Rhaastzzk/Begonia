@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/page6.css">
+</head>
+
+<body>
+	<main>
+		<h2>歌词欣赏</h2>
+		<h3 align="right"><a href="#" onclick="setCurrentPlayTime(); window.location.href='page5.html';">返回</a></h3>
+		<pre class="p1" align="center">
+在这个世界相遇 - 陈奕迅 (Eason Chan)
+
+词：田晓鹏
+
+曲：窦鹏
+星月相掩于大海上
+
+微风摇曳
+
+细雨也彷徨
+
+流霞飞舞
+
+群青深处
+
+你我曾相遇的地方
+
+你是否已化作风雨
+
+穿越时光
+
+来到这里
+
+秋去春来
+
+海棠花开
+
+你在梦里
+
+我不愿醒来
+
+每条大鱼
+
+都会相遇
+
+每个人
+
+都会重聚
+
+生命旅程
+
+往复不息
+
+每个梦都会有你
+
+你是否已化作风雨
+
+穿越时光
+
+来到这里
+
+秋去春来
+
+海棠花开
+
+你在梦里
+
+我不愿醒来
+
+每条大鱼
+
+都会相遇
+
+每个人
+
+都会重聚
+
+生命旅程
+
+往复不息
+
+每个梦
+
+都会有你
+
+每条大鱼
+
+都会相遇
+
+每一个人
+
+都会重聚
+
+生命旅程
+
+往复不息
+
+每一个梦
+
+都会有你
+</pre>
+
+	</main>
+	<audio id="audioElementId" src="../video/dayv.ogg" autoplay="autoplay" loop="loop" hidden="true"
+		style="display: none;">
+		你的浏览器版本太低
+	</audio>
+
+	<script>
+		function saveCurrentPlayTime() {
+			var audioElement = document.getElementById("audioElementId");
+			audioElement.currentTime = localStorage.getItem("bgMusicCurrentTime");
+			audioElement.play();
+			localStorage.setItem("bgMusicCurrentTime", audioElement.currentTime);
+		}
+		function setCurrentPlayTime() {
+			var audioElement = document.getElementById("audioElementId");
+			localStorage.setItem("bgMusicCurrentTime", audioElement.currentTime);
+		}
+
+		window.onload = saveCurrentPlayTime;
+	</script>
+</body>
+
+</html>

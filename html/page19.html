@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/page6.css">
+</head>
+
+<body>
+	<main>
+		<h2>视频鉴赏</h2>
+		<header>
+			<ul>
+				<li><a href="#" onclick="setCurrentPlayTime(); window.location.href='page17.html';">经典片段一</a></li>
+				<li><a href="#" onclick="setCurrentPlayTime(); window.location.href='page18.html';">经典片段二</a></li>
+				<li><a href="#" onclick="setCurrentPlayTime(); window.location.href='page19.html';">经典片段三</a></li>
+				<li><a href="#" onclick="setCurrentPlayTime(); window.location.href='page20.html';">经典片段四</a></li>
+				<li><a href="#" onclick="setCurrentPlayTime(); window.location.href='page11.html';">返回</a></li>
+			</ul>
+		</header>
+		<p class="" align="center"><video src="../video/3.mp4" controls="controls" width="900" height="600"></video>
+		</p>
+	</main>
+	<audio id="audioElementId" src="../video/dayv.ogg" autoplay="autoplay" loop="loop" hidden="true"
+		style="display: none;">
+		你的浏览器版本太低
+	</audio>
+
+	<script>
+		function saveCurrentPlayTime() {
+			var audioElement = document.getElementById("audioElementId");
+			audioElement.currentTime = localStorage.getItem("bgMusicCurrentTime");
+			audioElement.play();
+			localStorage.setItem("bgMusicCurrentTime", audioElement.currentTime);
+		}
+		function setCurrentPlayTime() {
+			var audioElement = document.getElementById("audioElementId");
+			localStorage.setItem("bgMusicCurrentTime", audioElement.currentTime);
+		}
+
+		window.onload = saveCurrentPlayTime;
+	</script>
+</body>
+
+</html>

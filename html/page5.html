@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/page5.css">
+</head>
+
+<body>
+	<header>
+		<ul>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='../点这里打开网页.html';">
+					剧情简介
+				</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page2.html';">
+					角色介绍</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page3.html';">
+					动画制作</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page4.html';">
+					制作相关</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page5.html';">
+					动画音乐</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page6.html';">
+					经典语句</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page7.html';">
+					放映信息</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page8.html';">
+					获奖记录</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page9.html';">
+					作品评价</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page10.html';">
+					观影感触</a>
+			</li>
+			<li>
+				<a href="#" onclick="setCurrentPlayTime(); window.location.href='page11.html';">
+					手机壁纸</a>
+			</li>
+		</ul>
+	</header>
+	<main>
+		<h2>动画音乐</h2>
+		<h3>主题曲</h3>
+		<table border="1">
+			<tr>
+				<th>曲目名称</th>
+				<th>词曲作者</th>
+				<th>演唱者</th>
+			</tr>
+			<tr>
+				<td> <a href="#" onclick="setCurrentPlayTime(); window.location.href='page14.html';">《在这个世界相遇》（主题曲）</a>
+				</td>
+				<td>田晓鹏（作词）/窦鹏（作曲） </td>
+				<td>陈奕迅</td>
+			</tr>
+			<tr>
+				<td><a href="#" onclick="setCurrentPlayTime(); window.location.href='page15.html';">《湫兮如风》（片尾主题曲）</a>
+				</td>
+				<td>梁旋（作词）/吉田洁（作曲/编曲</td>
+				<td></td>
+			</tr>
+		</table>
+		<img src="../images/m1.jpg" width="220" height="220">
+		<h3>印象曲</h3>
+		<table border="1">
+			<tr>
+				<th>曲目名称</th>
+				<th>词曲作者</th>
+				<th>演唱者</th>
+			</tr>
+			<tr>
+				<td><a href="#" onclick="setCurrentPlayTime(); window.location.href='page16.html';">《大鱼》</a></td>
+				<td>尹约（作词）/钱雷（作曲/钢琴编曲）</td>
+				<td>周深</td>
+			</tr>
+		</table>
+		<img src="../images/m2.jpg" width="220" height="220">
+	</main>
+	<audio id="audioElementId" src="../video/dayv.ogg" autoplay="autoplay" loop="loop" hidden="true"
+		style="display: none;">
+		你的浏览器版本太低
+	</audio>
+
+	<script>
+		function saveCurrentPlayTime() {
+			var audioElement = document.getElementById("audioElementId");
+			audioElement.currentTime = localStorage.getItem("bgMusicCurrentTime");
+			audioElement.play();
+			localStorage.setItem("bgMusicCurrentTime", audioElement.currentTime);
+		}
+		function setCurrentPlayTime() {
+			var audioElement = document.getElementById("audioElementId");
+			localStorage.setItem("bgMusicCurrentTime", audioElement.currentTime);
+		}
+
+		window.onload = saveCurrentPlayTime;
+	</script>
+</body>
+
+</html>
